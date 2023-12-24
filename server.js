@@ -10,7 +10,7 @@ const express = require("express")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
-
+const userRoute = require("./routes/userRoutes")
 /* ***********************
  * Routes
  *************************/
@@ -24,6 +24,7 @@ app.set("layout", "./layouts/layout") // not at views root
 app.get("/",(req,res)=>{
   res.render("index", {title: "Home"})
 })
+app.use("/user", userRoute);
 /* ***********************
  * Local Server Information
  * Values from .env (environment) file
