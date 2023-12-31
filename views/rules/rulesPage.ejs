@@ -1,37 +1,58 @@
 <% if (title) { %>
-    <h1>Pokémon Tournament Constitution</h1>
+  <h1>Pokémon Tournament Constitution</h1>
 
-    <article>
-      <h2 class="constitution">Preamble:</h2>
-      <p class="constitution">"We", the participants of the Pokémon Tournament, establish this constitution to govern the proceedings and regulations of the competition. The tournament aims to foster fair play, strategic prowess, and sportsmanship among its participants.</p>
+  <article>
   
-      <h2 class="constitution">Article I: Structure of the Tournament</h2>
+    <h2 class="constitution">Preamble:</h2>
+    <p class="constitution">"We", the participants of the Pokémon Tournament, establish this constitution to govern the proceedings and regulations of the competition. The tournament aims to foster fair play, strategic prowess, and sportsmanship among its participants.</p>
   
-      <h3 class="constitution">Section 1: Participants and Pokémon</h3>
-      <p class="constitution">1. The tournament shall consist of a minimum of 3 participants and 18 Pokémon, selected by the participants.</p>
-      <p class="constitution">2. Each participant shall randomly be assigned a specific number of Pokémon based on their performance in the previous edition. Champions may assign 7 Pokémon, runners-up 6, and the lowest-ranked participant shall assign 5 Pokémon.</p>
-      <p class="constitution">3. Champions and runners-up have the privilege to alter their assigned Pokémon types. Champions may change 2 types, while runners-up may change 1, either mutually with the champion or freely with the lowest-ranked participant.</p>
-      <p class="constitution">4. Participants switching assigned types cannot choose an ace Pokémon from the new type; they can only select an ace Pokémon from their original assigned types.</p>
+    <h2 class="constitution">Article I: Structure of the Tournament</h2>
   
-      <h2 class="constitution">Article II: Pokémon Selection</h2>
+    <h3 class="constitution">Section 1: Participants and Pokémon</h3>
+    <p class="constitution">1. The tournament shall consist of a minimum of 3 participants and 18 Pokémon, selected by the participants.</p>
+    <p class="constitution">2. Each participant shall randomly be assigned a specific number of Pokémon based on their performance in the previous edition. Champions may assign 7 Pokémon, runners-up 6, and the lowest-ranked participant shall assign 5 Pokémon.</p>
+    <p class="constitution">3. Champions and runners-up have the privilege to alter their assigned Pokémon types. Champions may change 2 types, while runners-up may change 1, either mutually with the champion or freely with the lowest-ranked participant.</p>
+    <p class="constitution">4. Participants switching assigned types cannot choose an ace Pokémon from the new type; they can only select an ace Pokémon from their original assigned types.</p>
   
-      <h3 class="constitution">Section 1: General Rules</h3>
-      <p class="constitution" >1. Participants may choose 18 Pokémon for the tournament, including an exclusive ace Pokémon.</p>
-      <p class="constitution" >2. All Pokémon, except aces, chosen for the tournament will be part of each participant's gallery, available for use by all participants.</p>
+    <h2 class="constitution">Article II: Pokémon Selection</h2>
   
-      <h2 class="constitution">Article III: Battle Regulations</h2>
+    <h3 class="constitution">Section 1: General Rules</h3>
+    <p class="constitution">1. Participants may choose 18 Pokémon for the tournament, including an exclusive ace Pokémon.</p>
+    <p class="constitution">2. All Pokémon, except aces, chosen for the tournament will be part of each participant's gallery, available for use by all participants.</p>
   
-      <h3 class="constitution">Section 1: Format and Restrictions</h3>
-      <p class="constitution">1. The tournament follows the Gen6 OU format, with the exception of the ace Pokémon.</p>
-      <p class="constitution">2. Participants have the authority to ban game 1 item or 1 move per tournament.</p>
+    <h2 class="constitution">Article III: Battle Regulations</h2>
   
-      <!-- ... Additional sections ... -->
+    <h3 class="constitution">Section 1: Format and Restrictions</h3>
+    <p class="constitution">1. The tournament follows the Gen6 OU format, with the exception of the ace Pokémon.</p>
+    <p class="constitution">2. Participants have the authority to ban game 1 item or 1 move per tournament.</p>
   
-      <h2 class="constitution">Article VII: Disqualifications</h2>
+    <h2 class="constitution">Article IV: Tournament Progression</h2>
   
-      <h3 class="constitution">Section 1: Philosophical Inspiration</h3>
-      <p class="constitution">1. Participants inspired to be philosophers by any anime are automatically disqualified from the tournament.</p>
-    </article>
+    <h3 class="constitution">Section 1: Battles and Elimination</h3>
+    <p class="constitution">1. Participants will randomly assign two participants to start the tournament's first battle.</p>
+    <p class="constitution">2. The winner of each battle continues until defeated, with the victorious participant taking their place.</p>
+    <p class="constitution">3. Defeat in an official battle requires the winner to assign one Pokémon from the other player's gallery as dead, and it means that the pokemon cannot be used until the end of the tournament</p>
+    <p class="constitution">4. If a participant runs out of Pokémon, they are eliminated from the tournament.</p>
+    <p class="constitution">5. If a player reaches only six Pokémon in their gallery, they may switch one with a dead Pokémon.</p>
+    <p class="constitution">6. Winners in case they beat their opponent without losing more than 2 pokemon. In that case they can choose to take two Pokémon from the other player's gallery, or take only one and make the defeated participant battle in his place.</p>
+  
+    <h2 class="constitution">Article V: Tournament Conclusion</h2>
+  
+    <h3 class="constitution">Section 1: Determining the Winner</h3>
+    <p class="constitution">1. The tournament concludes when all participants have fewer than 6 Pokémon in their gallery.</p>
+    <p class="constitution">2. A final battle between the two participants who lost the tournament determines the runner-up, with the winner claiming second place.</p>
+  
+    <h2 class="constitution">Article VI: Amendments and Voting</h2>
+  
+    <h3 class="constitution">Section 1: Changes to the Constitution</h3>
+    <p class="constitution">1. Participants have the right to vote on changes to this document; however, the author retains the final decision on any amendments.</p>
+  
+    <h2 class="constitution">Article VII: Disqualifications</h2>
+  
+    <h3 class="constitution">Section 1: Philosophical Inspiration</h3>
+    <p class="constitution">1. Participants inspired to be philosophers by any anime are automatically disqualified from the tournament.</p>
+  
+  </article>
     <% } else {
       res.redirect('/')
     } %>
