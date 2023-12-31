@@ -1,53 +1,46 @@
-<h1>Welcome to CSE Motors!</h1>
-<div class="delorean-box">
-    <img class="delorean" src="images/vehicles/delorean.jpg" alt="delorean">
-    <section class="box">
-        <h1>DMC Delorean</h1>
-<p>3 Cup holders</p>
-<p>Superman doors</p>
-<p>Fuzzy dice!</p>
-<button>own today</button>
-    </section>
-</div>
+<h1>Welcome to Pokemon Champions League!</h1>
 <section class="grid-container">
-    <div>
-        <h1 class="titles">Delorean Upgrades</h1>
-        <div class="in-grid-container">
-            <section>
-                <div>
-                    <img src="images/upgrades/flux-cap.png" alt="Flux Capacitor"> 
-                </div>
-                <a title="Click to log in" href="/account/login">Flux Capacitor</a>
-            </section>
-            <section>
-                <div>
-                    <img src="images/upgrades/flame.jpg" alt="Flame Decais"> 
-                </div>
-                <a title="Click to log in" href="/account/login">Flame Decais</a>
-            </section>
-            <section>
-                <div>
-                    <img src="images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers"> 
-                </div>
-                <a title="Click to log in" href="/account/login">Bumper Stickers</a>
-            </section>
-            <section>
-                <div>
-                    <img src="images/upgrades/hub-cap.jpg" alt="Hub Caps"> 
-                </div>
-                <a title="Click to log in" href="/account/login">Hub Caps</a>
-            </section>
-            
-        </div>
-    </div>
-    <div class="list_box">
-        <h1 class="titles">DMC Delorean Reviews</h1>
-        <ul class="item-list">
-            <li>"So fast it's almost like traveling in time."(4/5)</li>
-            <li>"Coolest ride on the road."(4/5)</li>
-            <li>"I'm feeling Mcfly!"(5/5)</li>
-            <li>"The most futuristic ride of our day."(4.5/5)</li>
-            <li>"80's livin and I love it!"(5/5)</li>
-        </ul>
-    </div>
-</section>
+  <div>
+    <section>
+      <h1 id="champion">Champion</h1>
+      <img id="pokemon-type-1" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-2" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-3" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-4" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-5" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-6" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-7" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+    </section>
+    <section>
+      <h1 id="Runner-up">Runner-up</h1>
+      <img id="pokemon-type-8" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-9" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-10" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-11" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-12" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-13" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+    </section>
+    <section>
+      <h1 id="Loser">Loser</h1>
+      <img id="pokemon-type-14" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-15" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-16" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-17" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+      <img id="pokemon-type-18" class="pokemon-type" src="/images/vehicles/pokeball.png" alt="pokemon-type">
+    </section>
+    <button onclick="changeImageSource()">randomize types</button>
+  </div>
+  <div id="registerContainer">
+    <%- grid %>
+    <form id="resgisterForm" action="/" method="post">
+      <div class="row">
+        <div class="col-25"><label class="grave" for="gallery">Adding Pokemons:</label></div>
+        <div class="col-75"><textarea name="gallery" id="gallery" type="text" style="height:200px" placeholder="Write the pokemons names.." required></textarea></div>
+      </div> 
+      <div class="row">
+        <button type="submit">Add Pokemons</button>
+      </div>   
+    </form>
+  </div>
+  </section>
+<script src="../../js/script.js"></script>
