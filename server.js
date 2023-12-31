@@ -12,7 +12,7 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 const userRoute = require("./routes/userRoutes")
-const bodyParser = require("body-parser")
+const bodyParser = require('body-parser')
 const baseController = require("./controllers/userController")
 /* ***********************
  * Routes
