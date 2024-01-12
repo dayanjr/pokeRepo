@@ -4,10 +4,12 @@ const userCont = {}
 userCont.buildHome = async function (req, res, next) {
     //const grid = await utilities.buildClassificationGrid(data)
     let grid = await utilities.getGrave()
+    let partg = await utilities.getpartGrave()
     //const className = data[0].classification_name
     res.render("index", {
       title:"home:",
-      grid
+      grid,
+      partg
     })
   }
 userCont.buildTitlesPage = async function (req, res, next) {
@@ -51,34 +53,4 @@ userCont.updateGraveyard = async function (req, res, next) {
         })
     }
   }
-  /* ****************************************
-*  Process Registration
-* *************************************** */
- userCont.registerAccount= async function (req, res) {
-  //let nav = await utilities.getNav()
-  const { account_firstname, account_lastname, account_email, account_password } = req.body
-
-  const regResult = await userModel.registerAccount(
-    account_firstname,
-    account_lastname,
-    account_email,
-    account_password
-  )
-  if (regResult) {
-    req.flash(
-      "notice",
-      `Congratulations, you\'re registered ${account_firstname}. Please log in.`
-    )
-    res.status(201).render("account/login", {
-      title: "Login",
-      nav,
-    })
-  } else {
-    req.flash("notice", "Sorry, the registration failed.")
-    res.status(501).render("account/register", {
-      title: "Registration",
-      nav,
-    })
-  }
-}
 module.exports = userCont

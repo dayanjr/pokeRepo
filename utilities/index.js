@@ -23,5 +23,19 @@ Util.getGrave = async function (req, res, next) {
     list += "</div>"
     return list
   }
+  Util.getpartGrave = async function (req, res, next) {
+    let data = await userModel.getDeadPokemons()
+    console.log(data)
+    let list = "<div>"
+    for (let i = 1; i < data.rows.length; i++) {
+      const row = data.rows[i];
+      list += `<section id="par${row.id}">
+      <img class="title_img" src="${row.images_src}"></img>
+      <h1>${row.participant_name}'s graveyard:</h1>
+      <h1>${row.gallery}</h1></section>`;
+  }
+    list += "</div>"
+    return list
+  }
   module.exports = Util
   Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)

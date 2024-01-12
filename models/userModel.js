@@ -11,11 +11,12 @@ async function getDeadPokemons(){
 }
 async function updateGrave(gallery) {
   try {
-    const sql ="UPDATE public.pokemons SET gallery = gallery || $1 WHERE id = ANY(ARRAY[1, 2, 3, 4]);"
+    const sql ="UPDATE public.pokemons SET gallery = gallery || $1 WHERE id = 4;"
     const data = await pool.query(sql,[gallery])
     return data.rows[0]
   } catch (error) {
     console.error("model error: " + error)
   }
 }
+
 module.exports = {getParticipants, updateGrave,getDeadPokemons}
