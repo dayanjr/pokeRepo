@@ -16,4 +16,7 @@ CREATE TABLE public.pokemons (
 );
 INSERT INTO public.pokemons (id, gallery)
 VALUES 
+    (1, ''),
+    (2, ''),
+    (3, ''),
     (4, '');
