@@ -9,7 +9,7 @@ userCont.buildHome = async function (req, res, next) {
     res.render("index", {
       title:"home:",
       grid,
-      partg
+      //partg
     })
   }
 userCont.buildTitlesPage = async function (req, res, next) {
