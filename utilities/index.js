@@ -14,13 +14,33 @@ Util.getInfo = async function (req, res, next) {
     list += "</div>"
     return list
   }
+  ////////////////////////////////////
+    async function a(api_url) {
+        const response = await fetch(api_url);
+        if(response.ok){
+            const data = await response.json();
+           return do_stuff(data)
+        } else {
+          console.error('Failed to fetch Pokémon data');
+          return null; // Return null if fetch fails
+      }
+    };
+    /////////////////////////
+    function do_stuff(data){
+        console.log("dataaaabase", data.sprites.front_default);
+       return data.sprites.front_default
+        };
 Util.getGrave = async function (req, res, next) {
     let data = await userModel.getDeadPokemons()
     console.log(data)
     let list = "<div>"
-    list +=`<h1 class="grave">Graveyard:</h1>`
     for(let i = 0; i < 18; i++){
-  list += `<p1>${data.rows[i].pokemon_type}</p1><br>`
+      if(data.rows[i].pokemon_name != ''){
+        const name = await a(`https://pokeapi.co/api/v2/pokemon/${data.rows[i].pokemon_name}`);
+        if(name) { // Check if name is not undefined
+          list += `<img class="poke-img" src="${name}"></img><br>`;
+      }
+      }
     }
     list += "</div>"
     return list

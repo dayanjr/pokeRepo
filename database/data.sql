@@ -11,6 +11,20 @@ VALUES
     (1, 'Boss', 'public/images/site/boss.png', 4, 0),
     (2, 'Deer-Man', 'public/images/site/boss.png', 0, 2),
     (3, 'Thomas Musk', 'public/images/site/boss.png', 0, 1);
+CREATE TABLE public.graveyard (
+    id SERIAL PRIMARY KEY,
+    combatant_name VARCHAR(255),
+    grave VARCHAR(255)
+);
+INSERT INTO public.graveyard(
+    id,
+    combatant_name,
+    grave
+)
+VALUES 
+(1,'',''),
+(2,'',''),
+(3,'','')
 CREATE TABLE public.pokemons (
     id SERIAL PRIMARY KEY,
     pokemon_type VARCHAR(255),

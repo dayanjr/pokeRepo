@@ -9,39 +9,60 @@ async function getParticipants(){
 async function getDeadPokemons(){
   return await pool.query("SELECT * FROM public.pokemons")
 }
+async function upgrav(name, dead){
+  try {
+    const sql =`UPDATE public.graveyard 
+    SET grave = 
+        CASE 
+            WHEN combatant_name = $1 THEN $2;`
+    const data = await pool.query(sql,[name,dead])
+      console.log('mamam',data.rows[0])
+    return data.rows[0]
+  } catch (error) {
+    console.error("model error: " + error)
+  }
+}
 async function updateGrave(normalType, fireType, waterType, 
   electricType, grassType, iceType, 
   fightingType, poisonType, groundType, 
   flyingType, psychicType, bugType, rockType, 
   ghostType, dragonType, darkType, steelType, fairyType ) {
   try {
-    const sql =`UPDATE public.pokemons SET pokemon_name = $1 WHERE id = 1;
-    UPDATE public.pokemons SET pokemon_name = $2 WHERE id = 2;
-    UPDATE public.pokemons SET pokemon_name = $3 WHERE id = 3;
-    UPDATE public.pokemons SET pokemon_name = $4 WHERE id = 4;
-    UPDATE public.pokemons SET pokemon_name = $5 WHERE id = 5;
-    UPDATE public.pokemons SET pokemon_name = $6 WHERE id = 6;
-    UPDATE public.pokemons SET pokemon_name = $7 WHERE id = 7;
-    UPDATE public.pokemons SET pokemon_name = $8 WHERE id = 8;
-    UPDATE public.pokemons SET pokemon_name = $9 WHERE id = 9;
-    UPDATE public.pokemons SET pokemon_name = $10 WHERE id = 10;
-    UPDATE public.pokemons SET pokemon_name = $11 WHERE id = 11;
-    UPDATE public.pokemons SET pokemon_name = $12 WHERE id = 12;
-    UPDATE public.pokemons SET pokemon_name = $13 WHERE id = 13;
-    UPDATE public.pokemons SET pokemon_name = $14 WHERE id = 14;
-    UPDATE public.pokemons SET pokemon_name = $15 WHERE id = 15;
-    UPDATE public.pokemons SET pokemon_name = $16 WHERE id = 16;
-    UPDATE public.pokemons SET pokemon_name = $17 WHERE id = 17;
-    UPDATE public.pokemons SET pokemon_name = $18 WHERE id = 18;`
+    const sql =`UPDATE public.pokemons 
+    SET pokemon_name = 
+        CASE 
+            WHEN id = 1 THEN $1
+            WHEN id = 2 THEN $2
+            WHEN id = 3 THEN $3
+            WHEN id = 4 THEN $4
+            WHEN id = 5 THEN $5
+            WHEN id = 6 THEN $6
+            WHEN id = 7 THEN $7
+            WHEN id = 8 THEN $8
+            WHEN id = 9 THEN $9
+            WHEN id = 10 THEN $10
+            WHEN id = 11 THEN $11
+            WHEN id = 12 THEN $12
+            WHEN id = 13 THEN $13
+            WHEN id = 14 THEN $14
+            WHEN id = 15 THEN $15
+            WHEN id = 16 THEN $16
+            WHEN id = 17 THEN $17
+            WHEN id = 18 THEN $18
+            -- Add more WHEN clauses for each id you want to update
+            ELSE pokemon_name  -- If id doesn't match any WHEN clause, keep the original value
+        END
+    WHERE id IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18);`
     const data = await pool.query(sql,[normalType, fireType, waterType, 
       electricType, grassType, iceType, 
       fightingType, poisonType, groundType, 
       flyingType, psychicType, bugType, rockType, 
       ghostType, dragonType, darkType, steelType, fairyType])
+      console.log('mamam',data.rows[0])
     return data.rows[0]
   } catch (error) {
     console.error("model error: " + error)
   }
 }
 
-module.exports = {getParticipants, updateGrave,getDeadPokemons}
+module.exports = {getParticipants, updateGrave,getDeadPokemons, upgrav}

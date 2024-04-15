@@ -27,7 +27,7 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at views root
 app.get("/", Util.handleErrors(baseController.buildHome))
-app.post("/", baseController.updateGraveyard)
+app.post("/", baseController.updateGraveyard, baseController.updateGrav)
 app.use("/user", userRoute);
 //app.use("/user",userRoute);
 /* ***********************
