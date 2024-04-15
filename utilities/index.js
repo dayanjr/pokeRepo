@@ -38,7 +38,7 @@ Util.getGrave = async function (req, res, next) {
       if(data.rows[i].pokemon_name != ''){
         const name = await a(`https://pokeapi.co/api/v2/pokemon/${data.rows[i].pokemon_name}`);
         if(name) { // Check if name is not undefined
-          list += `<img class="poke-img" src="${name}"></img><br>`;
+          list += `<img class="poke-img" src="${name}"></img>`;
       }
       }
     }
