@@ -39,8 +39,18 @@ userCont.buildFutureGamePage = async function (req, res, next) {
   }
 userCont.updateGraveyard = async function (req, res, next) {
     let grid = await utilities.getGrave()
-    const {gallery,} = req.body
-    const updateResult = await userModel.updateGrave(gallery,)
+    //const {gallery,} = req.body;
+    const { normalType, fireType, waterType, 
+      electricType, grassType, iceType, 
+      fightingType, poisonType, groundType, 
+      flyingType, psychicType, bugType, rockType, 
+      ghostType, dragonType, darkType, steelType, fairyType } = req.body;
+
+    const updateResult = await userModel.updateGrave(normalType, fireType, waterType, 
+      electricType, grassType, iceType, 
+      fightingType, poisonType, groundType, 
+      flyingType, psychicType, bugType, rockType, 
+      ghostType, dragonType, darkType, steelType, fairyType )
     if (updateResult) {
       res.render("index", {
         title: "home:",

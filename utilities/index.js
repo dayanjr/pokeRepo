@@ -19,7 +19,9 @@ Util.getGrave = async function (req, res, next) {
     console.log(data)
     let list = "<div>"
     list +=`<h1 class="grave">Graveyard:</h1>`
-  list += `<p1>${data.rows[3].gallery}</p1>`
+    for(let i = 0; i < 18; i++){
+  list += `<p1>${data.rows[i].pokemon_type}</p1><br>`
+    }
     list += "</div>"
     return list
   }
